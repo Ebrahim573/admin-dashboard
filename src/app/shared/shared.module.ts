@@ -38,7 +38,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    DetailsComponent
+
   ]
 })
 export class SharedModule { }
