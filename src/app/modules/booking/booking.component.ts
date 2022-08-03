@@ -17,7 +17,7 @@ export class BookingComponent implements OnInit {
   @ViewChild('bookForm',{static:false})
   bookForm! :NgForm;
 
-  bookData!:Book;
+  bookData!: Book;
   dataSource =new MatTableDataSource();
   displayedColumns: string[]=['id','hallname','capacity','personincharge','hallbookingprice','actions'];
   @ViewChild(MatPaginator, {static: true})
