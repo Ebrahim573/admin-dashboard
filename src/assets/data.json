@@ -1,0 +1,18 @@
+{
+    "jsonmanage": [{
+        "id": 1,
+        "firstname": "json-server",
+        "lastname": "typicode",
+        "email": "typicode@gamil.com",
+        "mobile": "1234567890",
+        "companyname": "typicode.pvt"
+    }],
+    "comments": [{
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+    }],
+    "profile": {
+        "name": "typicode"
+    }
+}

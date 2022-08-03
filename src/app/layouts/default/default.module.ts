@@ -16,13 +16,18 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BookingComponent } from 'src/app/modules/booking/booking.component';
+import { PasswordchangeComponent } from 'src/app/modules/passwordchange/passwordchange.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
     AssociateComponent,
-    BookingComponent
+    BookingComponent,
+    PasswordchangeComponent
   ],
   imports: [
     CommonModule,
@@ -32,12 +37,16 @@ import { BookingComponent } from 'src/app/modules/booking/booking.component';
     MatDividerModule,
     FlexLayoutModule,
     MatCardModule,
+    HttpClientModule,
     MatPaginatorModule,
+    MatInputModule,
     MatTableModule,
     MatListModule,
     MatMenuModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DefaultModule { }

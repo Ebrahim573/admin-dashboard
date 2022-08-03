@@ -1,4 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { manage } from 'src/app/model/manage';
+import { ManageService } from 'src/app/service/manage.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { NgForm } from '@angular/forms';
+import * as _ from 'lodash';
+
+import { response } from 'express';
+
+
+
 
 @Component({
   selector: 'app-associate',
@@ -6,10 +17,56 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./associate.component.scss']
 })
 export class AssociateComponent implements OnInit {
+//assistant: manage[]=[];
+@ViewChild('manageForm',{static:false})
+manageForm! :NgForm;
 
-  constructor() { }
+manageData!:manage;
+dataSource =new MatTableDataSource();
+displayedColumns: string[]=['id','firstname','lastname','email','mobile','companyname','actions'];
+@ViewChild(MatPaginator, {static: true})
+paginator!: MatPaginator;
+isEditMode =false;
+
+
+  constructor(private manageService:ManageService) { }
 
   ngOnInit(): void {
+    //this.assistant= this.manageService.getManage();
+    //console.log(this.assistant);
+
+this.dataSource.paginator=this.paginator;
+this.getAllmanage()
+
   }
+  getAllmanage(){
+    this.manageService.getList().subscribe((response: any)=> {
+      this.dataSource.data =response;
+    });
+    }
+editItem(element:any){
+  this.manageData= _.cloneDeep(element);
+  this.isEditMode=true;
+}
+cancelEdit(){
+  this.isEditMode=false;
+  this.manageForm.resetForm();
+}
+
+deleteItem(id:string){
+  this.manageService.deleteItem(id).subscribe.data.filter((o:any)=>{
+return o.id !==id ? o :false;
+  });
+  console.log(this.dataSource.data);
+
 
 }
+
+
+
+  }
+
+
+
+
+
