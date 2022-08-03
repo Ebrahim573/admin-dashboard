@@ -7,10 +7,13 @@
         "mobile": "1234567890",
         "companyname": "typicode.pvt"
     }],
-    "comments": [{
+    "books": [{
         "id": 1,
-        "body": "some comment",
-        "postId": 1
+        " hallname": "some comment",
+        "capacity": 1,
+        " personincharge": "some comment",
+        " hallbookingprice": "some comment"
+
     }],
     "profile": {
         "name": "typicode"
