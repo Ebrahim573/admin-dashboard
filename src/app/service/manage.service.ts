@@ -26,13 +26,13 @@ else{
     return throwError('Something bad happened try again later');
   };
 
-createItem(item:any):Observable<manage>{
+createItem(item: any):Observable<manage>{
    return this.http.post<manage>(this.base_Url,JSON.stringify(item),this.httpOptions)
   .pipe(retry(2),catchError(this.handleError))
 }
 
 
-getList(item: any):Observable<manage>{
+getList():Observable<manage>{
   return this.http.get<manage>(this.base_Url).pipe(retry(2),catchError(this.handleError))
 }
 getItem(id:string):Observable<manage>{
