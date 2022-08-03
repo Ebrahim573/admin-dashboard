@@ -7,7 +7,7 @@ import { manage } from '../model/manage';
 })
 export class ManageService {
 base_Url=" http://localhost:3000/jsonmanage";
-  constructor(private_http:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
 
 
