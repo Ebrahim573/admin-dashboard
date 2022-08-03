@@ -52,13 +52,14 @@ cancelEdit(){
 }
 
 deleteItem(id:string){
-  this.manageService.deleteItem(id).subscribe.data.filter((o:any)=>{
-return o.id !==id ? o :false;
-  });
-  console.log(this.dataSource.data);
+  this.manageService.deleteItem(id).subscribe((response:any) =>{
+    this.dataSource.data=this.dataSource.data.filter((o:any)=>{
+ return o.id !==id ? o :false;
+   });
+   console.log(this.dataSource.data);
+   });
 
-
-}
+ }
 
 
 

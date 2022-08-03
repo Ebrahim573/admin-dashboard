@@ -55,11 +55,12 @@ cancelEdit(){
 }
 
 deleteItem(id:string){
-  this.BookService.deleteItem(id).subscribe.data.filter((o:any)=>{
+  this.BookService.deleteItem(id).subscribe((response:any) =>{
+   this.dataSource.data=this.dataSource.data.filter((o:any)=>{
 return o.id !==id ? o :false;
   });
   console.log(this.dataSource.data);
-
+  });
 
 }
 
