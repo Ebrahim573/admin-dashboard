@@ -6,7 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { NgForm } from '@angular/forms';
 import * as _ from 'lodash';
 
-import { response } from 'express';
 
 
 
@@ -32,8 +31,7 @@ isEditMode =false;
   constructor(private manageService:ManageService) { }
 
   ngOnInit(): void {
-    //this.assistant= this.manageService.getManage();
-    //console.log(this.assistant);
+
 
 this.dataSource.paginator=this.paginator;
 this.getAllmanage()

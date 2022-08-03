@@ -8,19 +8,9 @@ import { manage } from '../model/manage';
 export class ManageService {
 base_Url=" http://localhost:3000/jsonmanage";
   constructor(private_http:HttpClient) { }
- // public getManage(): Manage[]
-  //{
-    //let assist = new Manage();
-    //assist.id=1;
-   // assist.firstname= "spider";
-//assist.lastname= "man" ;
-//assist.email="spider@gmail.com";
-//assist.mobile="1234567890";
 
-//return [assist];
-  //}
 
-//
+
 httpOptions={
   headers:new HttpHeaders({
     'content-type':'application/json'
@@ -35,25 +25,25 @@ else{
 }
     return throwError('Something bad happened try again later');
   };
-//post method
+
 createItem(item:any):Observable<manage>{
-  return this._http.post<manage>(this.base_Url,JSON.stringify(item),this.httpOptions)
+   return this.http.post<manage>(this.base_Url,JSON.stringify(item),this.httpOptions)
   .pipe(retry(2),catchError(this.handleError))
 }
-//get
+
 
 getList(item: any):Observable<manage>{
-  return this._http.get<manage>(this.base_Url,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError))
+  return this.http.get<manage>(this.base_Url,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError))
 }
 getItem(id:string):Observable<manage>{
-  return this._http.get<manage>(this.base_Url+'/'+id).pipe(retry(2),catchError(this.handleError))
+  return this.http.get<manage>(this.base_Url+'/'+id).pipe(retry(2),catchError(this.handleError))
 }
   updateItem(id:string, item: any): Observable<manage>{
-    return this._http.put<manage>(this.base_Url+'/'+id, JSON.stringify(item), this.httpOptions).pipe(retry(2),catchError(this.handleError))
+    return this.http.put<manage>(this.base_Url+'/'+id, JSON.stringify(item), this.httpOptions).pipe(retry(2),catchError(this.handleError))
 
   }
   deleteItem(id:string){
-    return this._http.delete<manage>(this.base_Url+'/'+id, this.httpOptions).pipe(retry(2),catchError(this.handleError))
+    return this.http.delete<manage>(this.base_Url+'/'+id, this.httpOptions).pipe(retry(2),catchError(this.handleError))
   }
 }
 
