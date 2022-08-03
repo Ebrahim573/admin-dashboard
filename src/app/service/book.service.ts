@@ -32,7 +32,7 @@ export class BookService {
 
 
   getList(item: any):Observable<Book>{
-    return this.http.get<Book>(this.base_Url,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError))
+    return this.http.get<Book>(this.base_Url).pipe(retry(2),catchError(this.handleError))
   }
   getItem(id:string):Observable<Book>{
     return this.http.get<Book>(this.base_Url+'/'+id).pipe(retry(2),catchError(this.handleError))

@@ -16,7 +16,7 @@ import * as _ from 'lodash';
   styleUrls: ['./associate.component.scss']
 })
 export class AssociateComponent implements OnInit {
-//assistant: manage[]=[];
+
 @ViewChild('manageForm',{static:false})
 manageForm! :NgForm;
 

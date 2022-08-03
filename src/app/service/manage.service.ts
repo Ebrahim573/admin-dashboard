@@ -33,7 +33,7 @@ createItem(item:any):Observable<manage>{
 
 
 getList(item: any):Observable<manage>{
-  return this.http.get<manage>(this.base_Url,JSON.stringify(item),this.httpOptions).pipe(retry(2),catchError(this.handleError))
+  return this.http.get<manage>(this.base_Url).pipe(retry(2),catchError(this.handleError))
 }
 getItem(id:string):Observable<manage>{
   return this.http.get<manage>(this.base_Url+'/'+id).pipe(retry(2),catchError(this.handleError))
