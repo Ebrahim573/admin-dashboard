@@ -36,10 +36,10 @@ export class BookService {
   }
   getItem(id:string):Observable<Book>{
     return this.http.get<Book>(this.base_Url+'/'+id).pipe(retry(2),catchError(this.handleError))
-  }
+  }//update item
     updateItem(id:string, item: any): Observable<Book>{
       return this.http.put<Book>(this.base_Url+'/'+id, JSON.stringify(item), this.httpOptions).pipe(retry(2),catchError(this.handleError))
-
+//deleteitemS
     }
     deleteItem(id:string){
       return this.http.delete<Book>(this.base_Url+'/'+id, this.httpOptions).pipe(retry(2),catchError(this.handleError))
