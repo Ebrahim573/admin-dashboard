@@ -7,12 +7,12 @@
         "mobile": "1234567890",
         "companyname": "typicode.pvt"
     }],
-    "books": [{
+    "jsonbooks": [{
         "id": 1,
-        " hallname": "some comment",
-        "capacity": 1,
-        " personincharge": "some comment",
-        " hallbookingprice": "some comment"
+        "hallname": "some comment",
+        "capacity": "15",
+        "personincharge": "some comment",
+        "hallbookingprice": "some comment"
 
     }],
     "profile": {

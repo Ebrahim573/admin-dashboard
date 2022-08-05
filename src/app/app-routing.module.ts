@@ -8,7 +8,7 @@ import { PasswordchangeComponent } from './modules/passwordchange/passwordchange
 
 const routes: Routes = [
   {path:'',component:DefaultComponent,
-  children:[{path:'', component:DashboardComponent}, {path:'associates',component:AssociateComponent},{path:'booking',component:BookingComponent},
+  children:[{path:'', component:DashboardComponent}, {path:'booking',component:BookingComponent},{path:'associates',component:AssociateComponent},
   {path:'changepassword',component:PasswordchangeComponent}
 ]}
 ];

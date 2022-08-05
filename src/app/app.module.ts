@@ -12,30 +12,27 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-
-
-
-
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-HttpClientModule,
+    HttpClientModule,
     DefaultModule,
     RouterModule,
     ReactiveFormsModule,
-FormsModule,
-MatButtonModule,
-MatPaginatorModule,
-MatTableModule,
-MatInputModule
+    FormsModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule,
+    SharedModule
 
   ],
   providers: [],

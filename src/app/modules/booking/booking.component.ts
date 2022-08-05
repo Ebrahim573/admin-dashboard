@@ -14,12 +14,12 @@ import { BookService } from 'src/app/service/book.service';
 export class BookingComponent implements OnInit {
 
 
-  @ViewChild('bookForm',{static:false})
-  bookForm! :NgForm;
+  @ViewChild('bookForm', {static:false})
+  bookForm! : NgForm;
 
   bookData!: Book;
   dataSource =new MatTableDataSource();
-  displayedColumns: string[]=['id','hallname','capacity','personincharge','hallbookingprice','actions'];
+  displayedColumns: string[] = ['id','hallname','capacity','personincharge','hallbookingprice','actions'];
   @ViewChild(MatPaginator, {static: true})
   paginator!: MatPaginator;
   isEditMode =false;
@@ -57,12 +57,12 @@ cancelEdit(){
 deleteItem(id:string){
   this.BookService.deleteItem(id).subscribe((response:any) =>{
    this.dataSource.data=this.dataSource.data.filter((o:any)=>{
-return o.id !==id ? o :false;
+  return o.id !==id ? o :false;
   });
   console.log(this.dataSource.data);
   });
 
-}
+ }
 
 
 
